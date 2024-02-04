@@ -375,12 +375,13 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     populateCreatorFields: true;
   };
   attributes: {
-    Title: Attribute.String;
+    Title: Attribute.String & Attribute.Required;
     Tag: Attribute.Enumeration<['Steeple Chase', 'Sprint', 'Parcours']>;
-    Content: Attribute.RichText;
-    Banner: Attribute.Media;
-    Description: Attribute.Text;
+    Content: Attribute.RichText & Attribute.Required;
+    Banner: Attribute.Media & Attribute.Required;
+    Description: Attribute.Text & Attribute.Required;
     Tweet: Attribute.Text & Attribute.CustomField<'plugin::oembed.oembed'>;
+    HorseUUID: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

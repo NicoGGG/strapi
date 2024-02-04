@@ -14,7 +14,8 @@
   "pluginOptions": {},
   "attributes": {
     "Title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Tag": {
       "type": "enumeration",
@@ -25,12 +26,13 @@
       ]
     },
     "Content": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "Banner": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -39,11 +41,16 @@
       ]
     },
     "Description": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "Tweet": {
       "type": "customField",
       "customField": "plugin::oembed.oembed"
+    },
+    "HorseUUID": {
+      "type": "string",
+      "regex": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
     }
   }
 }
