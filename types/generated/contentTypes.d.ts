@@ -368,15 +368,19 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     singularName: 'article';
     pluralName: 'articles';
     displayName: 'Article';
+    description: '';
   };
   options: {
     draftAndPublish: true;
+    populateCreatorFields: true;
   };
   attributes: {
     Title: Attribute.String;
     Tag: Attribute.Enumeration<['Steeple Chase', 'Sprint', 'Parcours']>;
     Content: Attribute.RichText;
     Banner: Attribute.Media;
+    Description: Attribute.Text;
+    Tweet: Attribute.Text & Attribute.CustomField<'plugin::oembed.oembed'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -384,14 +388,12 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'api::article.article',
       'oneToOne',
       'admin::user'
-    > &
-      Attribute.Private;
+    >;
     updatedBy: Attribute.Relation<
       'api::article.article',
       'oneToOne',
       'admin::user'
-    > &
-      Attribute.Private;
+    >;
   };
 }
 

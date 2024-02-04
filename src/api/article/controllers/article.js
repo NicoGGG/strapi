@@ -10,26 +10,28 @@ module.exports = createCoreController('api::article.article'), ({ strapi }) => (
   async find(ctx) {
     // Calling the default core action
     const { data, meta } = await super.find(ctx);
-
-    const query = strapi.db.query('api::article.article');
-
+    const query = strapi.db.query('api::[collection-name].[collection-name]');
     await Promise.all(
       data.map(async (item, index) => {
-        const article = await query.findOne({
+        const foundItem = await query.findOne({
           where: {
             id: item.id,
           },
-          populate: ['createdBy'],
+          populate: ['createdBy', 'updatedBy'],
         });
 
         data[index].attributes.createdBy = {
-          id: article.createdBy.id,
-          firstname: article.createdBy.firstname,
-          lastname: article.createdBy.lastname,
+          id: foundItem.createdBy.id,
+          firstname: foundItem.createdBy.firstname,
+          lastname: foundItem.createdBy.lastname,
+        };
+        data[index].attributes.updatedBy = {
+          id: foundItem.updatedBy.id,
+          firstname: foundItem.updatedBy.firstname,
+          lastname: foundItem.updatedBy.lastname,
         };
       })
     );
-
     return { data, meta };
   },
   async findOne(ctx) {

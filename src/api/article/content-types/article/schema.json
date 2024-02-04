@@ -4,10 +4,12 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Article"
+    "displayName": "Article",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": true,
+    "populateCreatorFields": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -26,14 +28,22 @@
       "type": "richtext"
     },
     "Banner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Tweet": {
+      "type": "customField",
+      "customField": "plugin::oembed.oembed"
     }
   }
 }

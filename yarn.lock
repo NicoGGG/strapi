@@ -8676,6 +8676,11 @@ statuses@2.0.1, statuses@^2.0.1:
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
   integrity sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==
 
+strapi-plugin-oembed@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-oembed/-/strapi-plugin-oembed-1.2.1.tgz#bc12e8cf2a199dde21f1d36c9d61f3774fea3f23"
+  integrity sha512-wrELjXa+D+i1Iabr4g+hxKTsTngrBqMntOTaA0PlCmGYE64Ou0AWrq9c7UhsTG0nyfcXsym6Zt7uD6C01nIC5A==
+
 stream-chain@2.2.5, stream-chain@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/stream-chain/-/stream-chain-2.2.5.tgz#b30967e8f14ee033c5b9a19bbe8a2cba90ba0d09"
